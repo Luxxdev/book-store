@@ -15,7 +15,7 @@ function Logo() {
     <LogoContainer>
       <LogoImage src={logo} alt="logo" />
       <p>
-        <strong>Alura</strong> Books
+        <strong>Luxx</strong> Books
       </p>
     </LogoContainer>
   )
