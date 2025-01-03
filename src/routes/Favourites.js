@@ -1,7 +1,6 @@
-import Header from './components/Header/Header'
 import styled from 'styled-components'
-import Search from './components/Search/Search'
-import LatestReleases from './components/LatestRealeases/LatestReleases'
+import Search from '../components/Search/Search'
+import LatestReleases from '../components/LatestRealeases/LatestReleases'
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -13,14 +12,12 @@ const AppContainer = styled.div`
   }
 `
 
-function App() {
+function Favourites() {
   return (
     <AppContainer>
-      <Header />
       <Search />
-      <LatestReleases />
     </AppContainer>
   )
 }
 
-export default App
+export default Favourites

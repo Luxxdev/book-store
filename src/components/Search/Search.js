@@ -31,6 +31,7 @@ const SearchResult = styled.div`
   align-items: center;
   margin-bottom: 20px;
   cursor: pointer;
+  height: '100%';
   p {
     width: 200px;
   }
