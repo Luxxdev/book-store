@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Search from '../components/Search/Search'
-import LatestReleases from '../components/LatestRealeases/LatestReleases'
 
 const AppContainer = styled.div`
   width: 100vw;
