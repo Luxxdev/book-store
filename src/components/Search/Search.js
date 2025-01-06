@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Input from '../Input/Input'
 import { useEffect, useState } from 'react'
-import { GetBooks } from '../../services/books'
+import { getBooks } from '../../services/books'
 
 const SearchContainer = styled.section`
   background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
@@ -52,7 +52,7 @@ function Search() {
   }, [])
 
   async function fetchBooks() {
-    const APIBooks = await GetBooks()
+    const APIBooks = await getBooks()
     setBooks(APIBooks)
   }
 
@@ -68,7 +68,7 @@ function Search() {
         }}
         placeholder="Escreva sua próxima leitura"
       />
-      {bookSearch.map((book) => (
+      {bookSearch.map(book => (
         <SearchResult>
           <img src={book.src}></img>
           <p>{book.name}</p>
