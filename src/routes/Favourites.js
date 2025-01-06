@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { getFavourites } from '../services/Favourites'
+import { deleteFavourite, getFavourites } from '../services/Favourites'
 import livroImg from '../assets/images/livro.png'
 
 const AppContainer = styled.div`
@@ -52,9 +52,15 @@ function Favourites() {
     setFavourites(favouritesAPI)
   }
 
+  async function removeFavourite(id) {
+    await deleteFavourite(id)
+    await fetchFavourites()
+    alert('livro removido')
+  }
+
   useEffect(() => {
     fetchFavourites()
-  })
+  }, [])
 
   return (
     <AppContainer>
@@ -63,7 +69,7 @@ function Favourites() {
         <ResultContainer>
           {
             favourites.length !== 0 ? favourites.map(fav => (
-              <Result>
+              <Result onClick={() => removeFavourite(fav.id)}>
                 <p>{fav.name}</p>
                 <img src={livroImg} />
               </Result>
